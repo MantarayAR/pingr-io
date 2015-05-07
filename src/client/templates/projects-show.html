@@ -1,0 +1,24 @@
+<template name="projectsShow">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{project.title}}</h1>
+  {{/contentFor}}
+  {{#ionView}}
+    {{#ionContent}}
+      {{project.title}}
+      {{project.description}}
+
+      {{#each project.lookingFor}}
+        {{> _pill this}}
+      {{/each}}
+
+      {{#if isOwner}}
+        <button data-ion-modal="_projectsEdit">Edit</button>
+        <button>Delete</button>
+      {{else}}
+        Back
+        Interested
+        Next
+      {{/if}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

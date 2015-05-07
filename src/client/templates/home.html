@@ -1,0 +1,28 @@
+<template name="home">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Pingr</h1>
+  {{/contentFor}}
+  {{#ionView}}
+    {{#ionContent}}
+
+      {{#if currentUser}}
+        {{> homeDecisions}}
+      {{else}}
+        {{> homeSpash}}
+      {{/if}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>
+
+<template name="homeSplash">
+  <p>Need talented individuals for your idea?</p>
+  <p>Looking for the Next Big Thing<small class="sup">&#8482;</small> to contribute to?</p>
+
+  <p>Find awesome ideas and help turn turn them into reality!</p>
+  <button class="button" data-ion-modal="_login">Let's Go!</button>
+</template>
+
+<template name="homeDecisions">
+  <button data-ion-modal="_projectsNew">I have a project</button>
+  <button datta-ion-modal="_skillsNew">I'm looking to contribute</button>
+</template>
