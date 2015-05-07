@@ -4,12 +4,13 @@
   {{/contentFor}}
   {{#ionView}}
     {{#ionContent}}
-
-      {{#if currentUser}}
-        {{> homeDecisions}}
-      {{else}}
-        {{> homeSpash}}
-      {{/if}}
+      <div class="home">
+        {{#if currentUser}}
+          {{> homeDecisions}}
+        {{else}}
+          {{> homeSplash}}
+        {{/if}}
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>
@@ -23,6 +24,6 @@
 </template>
 
 <template name="homeDecisions">
-  <button data-ion-modal="_projectsNew">I have a project</button>
-  <button datta-ion-modal="_skillsNew">I'm looking to contribute</button>
+  <button data-ion-modal="_projectsNew" class="button button-block">I have a project</button>
+  <button data-ion-modal="_userSkillsEdit" class="button button-block">I'm looking to contribute</button>
 </template>

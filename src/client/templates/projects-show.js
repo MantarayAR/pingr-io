@@ -4,16 +4,6 @@ Template.projectsShow.onCreated( function () {
   }.bind( this ) );
 } );
 
-Template.projectsShow.onRendered( function () {
-  this.autorun( function () {
-    if ( ! this.subscriptions.ready() ) {
-      IonLoading.show();
-    } else {
-      IonLoading.hide();
-    }
-  }.bind ( this ) );
-} );
-
 Template.projectsShow.helpers( {
   project: function () {
     return Projects.findOne( {
@@ -24,6 +14,25 @@ Template.projectsShow.helpers( {
     var project = Projects.findOne( {
       _id : Router.current().params._id
     } );
-    return Meteor.userId() === project.owner;
+    if ( project ) {
+      return Meteor.userId() === project.owner;
+    } else {
+      return false;
+    }
+  }
+} );
+
+Template.projectsShow.events( {
+  'click [data-action=interested]' : function ( e ) {
+    // TODO
+    console.log( 'interested' );
+  },
+  'click [data-action=back]' : function ( e ) {
+    // TODO
+    console.log( 'back' );
+  },
+  'click [data-action=forward]' : function ( e ) {
+    // TODO
+    console.log( 'forward' );
   }
 } );

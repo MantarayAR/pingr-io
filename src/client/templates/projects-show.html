@@ -2,23 +2,36 @@
   {{#contentFor "headerTitle"}}
     <h1 class="title">{{project.title}}</h1>
   {{/contentFor}}
+  
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="home"}}
+  {{/contentFor}}
+
   {{#ionView}}
     {{#ionContent}}
-      {{project.title}}
-      {{project.description}}
+      <div class="project">
+        <div class="list card">
+          <h2>{{project.title}}</h2>
+          <p>{{project.description}}</p>
 
-      {{#each project.lookingFor}}
-        {{> _pill this}}
-      {{/each}}
+          <div class="pills">
+            {{#each project.lookingFor}}
+              {{> _pill this}}
+            {{/each}}
+          </div>
 
-      {{#if isOwner}}
-        <button data-ion-modal="_projectsEdit">Edit</button>
-        <button>Delete</button>
-      {{else}}
-        Back
-        Interested
-        Next
-      {{/if}}
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            {{#if isOwner}}
+              <a class="tab-item" href="#" data-ion-modal="_projectsEdit">Edit</a>
+              <a class="tab-item" href="#" data-ion-modal="_projectsDelete">Delete</a>
+            {{else}}
+              <a class="tab-item" href="#" data-action="back">Back</a>
+              <a class="tab-item" href="#" data-action="interested">Interested</a>
+              <a class="tab-item" href="#" data-action="next">Next</a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>
