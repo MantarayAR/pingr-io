@@ -34,5 +34,6 @@ Template.projectsShow.events( {
   'click [data-action=forward]' : function ( e ) {
     // TODO
     console.log( 'forward' );
+    doAction( 'findAProject' );
   }
 } );

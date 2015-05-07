@@ -25,20 +25,7 @@ Template._userSkillsEdit.helpers( {
 AutoForm.hooks( {
   'userskills-edit-form' : {
     onSuccess: function ( operation, result, template ) {
-      IonLoading.show();
-
-      Meteor.call( 'findAProject', function ( error, result ) {
-        if ( error ) {
-          alert( error );
-        } else {
-          IonModal.close();
-          IonLoading.hide();
-
-          Router.go( 'projects.show', {
-            _id: result
-          } );
-        }
-      });
+      doAction( 'findAProject' );
     },
     onError : function ( operation, error, template ) {
       alert( error );

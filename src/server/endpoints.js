@@ -25,11 +25,11 @@ Meteor.methods( {
       }
     } );
 
-    var projects = projects.fetch();
+    if ( projects && projects.fetch ) {
+      var projects = projects.fetch();
 
-    if ( projects ) {
       // pick a random one
-      return Random.choice( projects.fetch() )._id;
+      return Random.choice( projects )._id;
     } else {
       throw new Error( 'No projects that are looking for your skills!' );
     }
