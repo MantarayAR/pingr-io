@@ -1,0 +1,29 @@
+<template name="projectsNone">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">No Projects Found</h1>
+  {{/contentFor}}
+  
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="home"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="project">
+        <div class="list card">
+          <h2>No Projects Found</h2>
+          <p>It looks like we can't find any projects
+          that are looking for the skills you specified.</p>
+  
+          <p>You can try adding more skills, change your wording,
+          or you can contact us if you think this is a mistake.</p>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" data-ion-modal="_userSkillsEdit">Skills</a>
+            <a class="tab-item" href="#" data-ion-modal="_contactUs">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

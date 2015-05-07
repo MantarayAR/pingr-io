@@ -11,9 +11,13 @@ addAction( 'findAProject', function () {
       IonModal.close();
       IonLoading.hide();
 
-      Router.go( 'projects.show', {
-        _id: result
-      } );
+      if ( result === -1 ) {
+        Router.go( 'projects.none' );
+      } else {
+        Router.go( 'projects.show', {
+          _id: result
+        } );  
+      }
     }
-  });
+  } );
 } );
