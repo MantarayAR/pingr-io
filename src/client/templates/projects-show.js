@@ -28,12 +28,9 @@ Template.projectsShow.events( {
     console.log( 'interested' );
   },
   'click [data-action=back]' : function ( e ) {
-    // TODO
-    console.log( 'back' );
+    window.history.back()
   },
-  'click [data-action=forward]' : function ( e ) {
-    // TODO
-    console.log( 'forward' );
+  'click [data-action=next]' : function ( e ) {
     doAction( 'findAProject' );
   }
 } );

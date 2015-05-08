@@ -1,1 +1,0 @@
-RelatedSkills = new Mongo.Collection( 'related-skills' );

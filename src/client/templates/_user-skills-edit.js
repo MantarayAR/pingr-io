@@ -4,16 +4,6 @@ Template._userSkillsEdit.onCreated( function () {
   }.bind( this ) );
 } );
 
-Template._userSkillsEdit.onRendered( function () {
-  this.autorun( function () {
-    if ( ! this.subscriptions.ready() ) {
-      IonLoading.show();
-    } else {
-      IonLoading.hide();
-    }
-  }.bind ( this ) );
-} );
-
 Template._userSkillsEdit.helpers( {
   userSkills : function () {
     return UserSkills.findOne( {

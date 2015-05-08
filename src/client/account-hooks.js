@@ -5,8 +5,6 @@ AccountsTemplates.configure({
       IonModal.close();
     },
     onSubmitHook: function () {
-
-
       Router.go( 'home' );
       IonModal.close();
     }

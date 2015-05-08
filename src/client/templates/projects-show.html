@@ -11,15 +11,20 @@
     {{#ionContent}}
       <div class="project">
         <div class="list card">
-          <h2>{{project.title}}</h2>
-          <p>{{project.description}}</p>
-
-          <div class="pills">
-            {{#each project.lookingFor}}
-              {{> _pill this}}
-            {{/each}}
+          <div class="item item-divider">
+            <h2>{{project.title}}</h2>
           </div>
+          <div class="item item-text-wrap">
+            <p>{{project.description}}</p>
 
+            <br/>
+            <h3>Looking For</h3>
+            <div class="pills">
+              {{#each project.lookingFor}}
+                {{> _pill this}}
+              {{/each}}
+            </div>
+          </div>
           <div class="item tabs tabs-secondary tabs-icon-left">
             {{#if isOwner}}
               <a class="tab-item" href="#" data-ion-modal="_projectsEdit">Edit</a>
