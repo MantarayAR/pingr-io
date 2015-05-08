@@ -3,6 +3,21 @@
     {{> ionNavBar class="bar-positive"}}
     {{#ionNavView}}
       {{> yield}}
+      {{#if isIOS}}
+        {{#ionTabs style="ios"}}
+          {{> ionTab title="Home" path="home" iconOff="ios-home-outline" iconOn="ios-home"}}
+          {{> ionTab title="My Projects" path="projects.list" iconOff="ios-star-outline" iconOn="ios-lightbulb-outline"}}
+          {{> ionTab title="Messages" path="messages" iconOff="ios-heart-outline" iconOn="ios-chatboxes-outline" badge="1"}}
+          {{> ionTab title="Profile" path="profile" iconOff="ios-gear-outline" iconOn="ios-gear"}}
+        {{/ionTabs}}
+      {{else}}
+        {{#ionTabs style="android" class="tabs-striped tabs-background-positive tabs-color-light"}}
+          {{> ionTab title="Home" path="home" icon="android-home"}}
+          {{> ionTab title="My Projects" path="projects.list" icon="lightbulb"}}
+          {{> ionTab title="Messages" path="messages" icon="chatboxes" badgeNumber="1"}}
+          {{> ionTab title="Profile" path="profile" icon="gear-b"}}
+        {{/ionTabs}}
+      {{/if}}
     {{/ionNavView}}
   {{/ionBody}}
 </template>

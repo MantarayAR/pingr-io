@@ -27,9 +27,6 @@ Template.projectsShow.events( {
     // TODO
     console.log( 'interested' );
   },
-  'click [data-action=back]' : function ( e ) {
-    window.history.back()
-  },
   'click [data-action=next]' : function ( e ) {
     doAction( 'findAProject' );
   }

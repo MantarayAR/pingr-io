@@ -12,6 +12,10 @@ Router.map( function() {
     template: 'projectsNone'
   } );
 
+  this.route( 'projects.list', {
+    path: '/projects/list'
+  } );
+
   this.route( 'projects.show', {
     path: '/projects/:_id'
   } );

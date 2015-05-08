@@ -1,0 +1,26 @@
+<template name="projectsList">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">No Projects Found</h1>
+  {{/contentFor}}
+ 
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-modal="_projectsNew">{{> ionIcon icon="ios-plus-empty"}}</button>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="home"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each projects}}
+          {{#ionItem path="projects.show" buttonRight=true avatar=false class="item-icon-right"}}
+            {{title}} - {{description}}
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>
