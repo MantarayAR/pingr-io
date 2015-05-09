@@ -60,11 +60,18 @@ Template.registerHelper( 'unreadMessages', function () {
         // Notify
 
         Notification.requestPermission( function () {
-          new Notification( 'Message received', {
+          var notification = new Notification( 'Message received', {
             body: 'You have a total of ' + number + ' unread messages.',
             tag : 'preset', // TODO
             icon: 'http://placehold.it/20x20' //TODO
           } );
+
+          notification.onclick = function( x ) {
+            window.focus();
+            this.cancel(); 
+          };
+          
+          notification.show();
         } );
       }
 
