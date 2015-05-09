@@ -1,3 +1,28 @@
 .home {
-  
+  display: flex;
+
+  @media (max-width: $modal-inset-mode-break-point ) {
+    display: block;
+  }
+}
+
+.home button {
+  border-radius: 0;
+  display: inline-block;
+  height: 100px;
+  line-height: 1.2em;
+  margin: 0px !important;
+  min-height: 1px;
+  width: 50%;
+
+  @media (max-width: $modal-inset-mode-break-point ) {
+    width: 100%;
+  }
+
+  &:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }

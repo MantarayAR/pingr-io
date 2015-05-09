@@ -10,16 +10,16 @@ Template.body.onRendered(function () {
 
 Template.body.onRendered( function () {
   this.autorun( function () {
-    this.subscription = Meteor.subscribe( 'messagesList' );
+    Meteor.subscribe( 'messagesList' );
+    Meteor.subscribe( 'userSettings' );
   }.bind( this ) );
-} );
 
-Template.body.onRendered( function () {
   Template.body.favico = new Favico( {
     animation : 'popFade'
   } );
 
-  Template.body.notifications = null;
+  Template.body.notifications = 0;
+  Template.body.firstRun = true;
 } );
 
 Template.body.events( {
@@ -27,6 +27,13 @@ Template.body.events( {
     e.preventDefault();
     
     ( new userHistory() ).goBack();
+  },
+  'click [data-action=logout]' : function ( e ) {
+    e.preventDefault();
+
+    Meteor.logout( function () {
+      Router.go( 'home' );
+    } );
   }
 } );
 
@@ -54,11 +61,12 @@ Template.registerHelper( 'unreadMessages', function () {
       }
 
       // Determine whether to notify or not
-      if ( Template.body.notifications == null ) {
-        // Don't notify
-      } else if ( Template.body.notifications <= number ) {
-        // Notify
+      var userSettings = UserSettings.findOne({});
 
+      if ( ! userSettings.disableNotifications &&
+           ! Template.body.firstRun && 
+           Template.body.notifications < number ) {
+        // Notify
         Notification.requestPermission( function () {
           var notification = new Notification( 'Message received', {
             body: 'You have a total of ' + number + ' unread messages.',
@@ -68,13 +76,11 @@ Template.registerHelper( 'unreadMessages', function () {
 
           notification.onclick = function( x ) {
             window.focus();
-            this.cancel(); 
           };
-          
-          notification.show();
         } );
       }
 
+      Template.body.firstRun = false;
       Template.body.notifications = number;
     }
   }.bind( this ) );

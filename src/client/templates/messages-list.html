@@ -12,8 +12,13 @@
       {{#ionList}}
         {{#each messages}}
           {{#ionItem path="messages.show" buttonRight=true avatar=false class=messageClasses}}
-            <h2>To: {{toName}}</h2>
-            <p>From: {{fromName}}</p>
+            <h2>
+              {{#if incoming}}
+                From: {{fromName}}
+              {{else}}
+                To: {{toName}}
+              {{/if}}
+            </h2>
             <p>{{messageShort}}</p>
 
             {{#if incoming}}

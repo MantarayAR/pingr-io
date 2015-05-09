@@ -1,11 +1,11 @@
 $loading-font-size: 22px;
+$energized: #ff6f00;
+$assertive: #bf360c;
+$positive: #0277bd;
 
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
-.contact-detail {
-  background: $stable;
-}
 
 @import 'scaffolding';
 @import 'badges';

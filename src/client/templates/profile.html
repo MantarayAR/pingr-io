@@ -1,0 +1,39 @@
+<template name="profile">
+{{#contentFor "headerTitle"}}
+    <h1 class="title">Your Profile</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="home"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="button-bar">
+        <a class="button button-outline button-assertive" data-action="logout">Logout</a>
+      </div>
+
+      <div class="list card">
+        <div class="item item-divider">
+          <h2>Account Settings</h2>
+        </div>
+        <div class="item item-text-wrap">
+          <ul class="list">
+            <li class="item item-checkbox">
+               <label class="checkbox">
+                  {{#if settings.disableNotifications}}
+                    <input type="checkbox" checked name="disableNotifications">
+                  {{else}}
+                    <input type="checkbox" name="disableNotifications">
+                  {{/if}}
+               </label>
+               Disable Notifications
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
+    {{/ionContent}}
+  {{/ionView}}
+</template>

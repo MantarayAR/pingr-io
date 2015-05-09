@@ -33,3 +33,17 @@ Meteor.publish('messagesList', function( /* TODO lazy load in chunks */ ) {
 Meteor.publish('userSkills', function(ownerId) {
   return UserSkills.find({owner: ownerId});
 });
+
+Meteor.publish('userSettings', function() {
+  var u = UserSettings.find({owner: this.userId});
+
+  if ( u.fetch().length === 0 ) {
+    UserSettings.insert({
+      owner : this.userId
+    });
+
+    return UserSettings.find({owner: this.userId});
+  }
+
+  return u;
+});

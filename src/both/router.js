@@ -8,6 +8,10 @@ Router.map( function() {
     fastRender: true
   } );
 
+  this.route( 'profile', {
+    path: '/profile'
+  } );
+
   this.route( 'projects.none', {
     path: '/projects/none',
     template: 'projectsNone'
