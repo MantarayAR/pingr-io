@@ -18,7 +18,7 @@ AutoForm.hooks( {
       doAction( 'findAProject' );
     },
     onError : function ( operation, error, template ) {
-      alert( error );
+      doAction( 'handleError', error );
     }
   }
 } );

@@ -12,6 +12,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+chuangbo:cookie@1.1.0
 coffeescript@1.0.6
 dandv:caret-position@2.1.1
 ddp@1.1.0
@@ -46,6 +47,9 @@ mantarayar:actions-filters@0.0.1
 matb33:collection-hooks@0.7.13
 meteor@1.1.6
 meteor-platform@1.2.2
+meteorhacks:fast-render@2.3.2
+meteorhacks:inject-data@1.2.3
+meteorhacks:picker@1.0.2
 meteoric:autoform-ionic@0.1.5
 meteoric:ionic@0.1.17
 meteoric:ionic-sass@0.1.9

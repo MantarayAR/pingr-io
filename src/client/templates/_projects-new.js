@@ -6,7 +6,7 @@ AutoForm.hooks( {
       Router.go( 'projects.show', { _id : result } );
     },
     onError: function ( operation, error, template ) {
-      alert( error );
+      doAction( 'handleError', error );
     }
   }
 } );

@@ -7,6 +7,8 @@ $loading-font-size: 22px;
   background: $stable;
 }
 
+@import 'scaffolding';
 @import 'badges';
 
 @import 'home';
+@import 'messages';

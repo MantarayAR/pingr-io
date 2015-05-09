@@ -11,16 +11,21 @@
     {{#ionContent}}
       <div class="project">
         <div class="list card">
-          <h2>No Projects Found</h2>
-          <p>It looks like we can't find any projects
-          that are looking for the skills you specified.</p>
-  
-          <p>You can try adding more skills, change your wording,
-          or you can contact us if you think this is a mistake.</p>
+          <div class="item item-divider">
+            <h2>No Projects Found</h2>
+          </div>
+          <div class="item item-text-wrap">
+            <p>It looks like we can't find any projects
+            that are looking for the skills you specified.</p>
+    
+            <p>You can try adding more skills, change your wording,
+            or you can contact us if you think this is a mistake.</p>
+          </div>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#" data-ion-modal="_userSkillsEdit">Skills</a>
-            <a class="tab-item" href="#" data-ion-modal="_contactUs">Contact Us</a>
+            <a class="tab-item" href="#" data-ion-modal="_userSkillsEdit">Edit Your Skills</a>
+            
+            {{! TODO <a class="tab-item" href="#" data-ion-modal="_contactUs">Contact Us</a> }}
           </div>
         </div>
       </div>

@@ -1,0 +1,13 @@
+.card.autoform-array-item .item:last-child {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 9px;
+  width: 100px;
+}
+
+.card.autoform-array-item input[type="text"] {
+  float: left;
+  padding-left: 10px;
+  width: calc( 100% - 100px );
+}

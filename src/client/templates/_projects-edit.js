@@ -13,7 +13,7 @@ AutoForm.hooks( {
       IonModal.close();
     },
     onError : function ( operation, error, template ) {
-      alert( error );
+      doAction( 'handleError', error );
     }
   }
 } );

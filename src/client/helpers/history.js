@@ -74,9 +74,9 @@ this.userHistory = (function() {
       }, {
         $set: _history
       });
-      return Router.go(_history.locations.last());
-    } else {
-      return Router.go(window.history.back());
+      Router.go(_history.locations.last());
+    } else {      
+      window.history.back();
     }
   };
 

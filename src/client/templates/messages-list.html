@@ -1,0 +1,31 @@
+<template name="messagesList">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Your Messages</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="home"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each messages}}
+          {{#ionItem path="messages.show" buttonRight=true avatar=false class=messageClasses}}
+            <h2>To: {{toName}}</h2>
+            <p>From: {{fromName}}</p>
+            <p>{{messageShort}}</p>
+
+            {{#if incoming}}
+              {{> ionIcon icon="arrow-right-c" class="assertive"}}
+            {{else}}
+              {{> ionIcon icon="arrow-left-c" class="dark"}}
+            {{/if}}
+
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

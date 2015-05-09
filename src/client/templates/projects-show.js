@@ -23,11 +23,35 @@ Template.projectsShow.helpers( {
 } );
 
 Template.projectsShow.events( {
-  'click [data-action=interested]' : function ( e ) {
-    // TODO
-    console.log( 'interested' );
-  },
   'click [data-action=next]' : function ( e ) {
+    e.preventDefault();
+
     doAction( 'findAProject' );
+  },
+  'click [data-action=projectDelete]' : function ( e ) {
+    e.preventDefault();
+
+    var that = this;
+
+    IonPopup.confirm({
+      title: 'Are you sure?',
+      template: 'Are you sure you want to delete this project?  You cannot undo this action.',
+      onOk: function() {
+
+        IonLoading.show();
+
+        Meteor.call( 'projectsDelete', Router.current().params._id, function ( error, result ) {
+          Meteor.setTimeout( function () {
+            IonLoading.hide();
+
+            if ( error ) {
+            doAction( 'handleError', error );
+            } else {
+              Router.go( 'projects.list' );
+            }
+          }, 500 );
+        } );
+      }
+    });
   }
 } );

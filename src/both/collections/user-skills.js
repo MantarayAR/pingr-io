@@ -22,7 +22,11 @@ UserSkills.attachSchema( new SimpleSchema( {
     autoform : {
       'label-type' : 'floating',
       placeholder : 'A skill you wish to contribute'
-    }
+    },
+    maxCount : 10
+  },
+  'skills.$' : {
+    min: 1
   }
 } ) );
 

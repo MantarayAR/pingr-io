@@ -1,6 +1,6 @@
 <template name="projectsList">
   {{#contentFor "headerTitle"}}
-    <h1 class="title">No Projects Found</h1>
+    <h1 class="title">Your Projects</h1>
   {{/contentFor}}
  
   {{#contentFor "headerButtonRight"}}
@@ -16,7 +16,8 @@
       {{#ionList}}
         {{#each projects}}
           {{#ionItem path="projects.show" buttonRight=true avatar=false class="item-icon-right"}}
-            {{title}} - {{description}}
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
             {{> ionIcon icon="ios-arrow-forward" class="positive"}}
           {{/ionItem}}
         {{/each}}

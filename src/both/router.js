@@ -4,7 +4,8 @@ Router.configure( {
 
 Router.map( function() {
   this.route( 'home', {
-    path: '/'
+    path: '/',
+    fastRender: true
   } );
 
   this.route( 'projects.none', {
@@ -18,5 +19,13 @@ Router.map( function() {
 
   this.route( 'projects.show', {
     path: '/projects/:_id'
+  } );
+
+  this.route( 'messages.list', {
+    path: '/messages/list'
+  } );
+
+  this.route( 'messages.show', {
+    path: '/messages/:_id'
   } );
 } );

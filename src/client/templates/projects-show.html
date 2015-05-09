@@ -28,10 +28,10 @@
           <div class="item tabs tabs-secondary tabs-icon-left">
             {{#if isOwner}}
               <a class="tab-item" href="#" data-ion-modal="_projectsEdit">Edit</a>
-              <a class="tab-item" href="#" data-ion-modal="_projectsDelete">Delete</a>
+              <a class="tab-item" href="#" data-action="projectDelete">Delete</a>
             {{else}}
               <a class="tab-item" href="#" data-action="back">Back</a>
-              <a class="tab-item" href="#" data-action="interested">Interested</a>
+              <a class="tab-item" href="#" data-ion-modal="_projectsInterested">Interested</a>
               <a class="tab-item" href="#" data-action="next">Next</a>
             {{/if}}
           </div>

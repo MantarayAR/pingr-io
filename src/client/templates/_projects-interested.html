@@ -1,0 +1,21 @@
+<template name="_projectsInterested">
+  {{#ionModal customTemplate=true}}
+    <div class="bar bar-header bar-stable">
+      <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+      <h2 class="title">Interested!</h2>
+      <button type="submit" class="button button-positive button-clear">Send Message</button>
+    </div>
+    <div class="content has-header overflow-scroll">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Message {{project.title}}</span>
+          <textarea name="message" rows="20">I'm interested in {{project.title}}. I can offer the following skills: {{skillsJoined}}!
+
+Message me when you get the chance and we can discuss this project and how I can contibute in more detail.
+
+Thank you!</textarea>
+        </label>
+      </div>
+    </div>
+  {{/ionModal}}
+</template>

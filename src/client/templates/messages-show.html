@@ -1,0 +1,45 @@
+<template name="messagesShow">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Your Messages</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="messages.list"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="list card">
+        {{#with message}}
+          <div class="item item-divider">
+            <h2>To: {{toName}}</h2>
+          </div>
+          <div class="item item-text-wrap">
+            <p>From: {{fromName}}</p>
+
+            {{#if hasParentMessage}}
+              {{#if parentMessagesNotLoaded}}
+                <a class="button button-clear button-block button-light" href="#" data-action="messageParent">Load Parent Messages</a>
+              {{else}}
+                {{#each parentMessages}}
+                  <div class="item">
+                    {{#with this}}
+                      {{{messageHtml}}}
+                    {{/with}}
+                  </div>
+                {{/each}}
+              {{/if}}
+            {{/if}}
+
+            <p>{{{messageHtml}}}</p>
+          </div>
+        {{/with}}
+        {{#if isRecipient}}
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" data-ion-modal="_messagesNew">Reply</a>
+          </div>
+        {{/if}}
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

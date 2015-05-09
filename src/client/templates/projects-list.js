@@ -6,7 +6,6 @@ Template.projectsList.onCreated( function () {
 
 Template.projectsList.onRendered( function () {
   this.autorun( function () {
-    console.log( this, this.subscription );
     if ( ! this.subscription.ready() ) {
       IonLoading.show();
     } else {

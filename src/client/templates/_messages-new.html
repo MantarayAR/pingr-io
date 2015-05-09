@@ -1,0 +1,20 @@
+<template name="_messagesNew">
+  {{#ionModal customTemplate=true}}
+    <div class="bar bar-header bar-stable">
+      <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+      <h2 class="title">New Message</h2>
+      <button type="submit" class="button button-positive button-clear">Send Message</button>
+    </div>
+    <div class="content has-header overflow-scroll">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Message {{message.fromName}}</span>
+          <textarea name="message" rows="20">{{messageQuote}}
+
+
+</textarea>
+        </label>
+      </div>
+    </div>
+  {{/ionModal}}
+</template>

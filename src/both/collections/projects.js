@@ -34,6 +34,7 @@ Projects.attachSchema( new SimpleSchema( {
   lookingFor : {
     type : [String],
     label : 'Skills You Are Looking For',
+    maxCount: 5,
     autoform : {
       placeholder: 'A skill you are looking for',
       settings : {
