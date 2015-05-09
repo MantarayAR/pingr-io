@@ -14,6 +14,14 @@ Template.body.onRendered( function () {
   }.bind( this ) );
 } );
 
+Template.body.onRendered( function () {
+  Template.body.favico = new Favico( {
+    animation : 'popFade'
+  } );
+
+  Template.body.notifications = null;
+} );
+
 Template.body.events( {
   'click [data-action=back]' : function ( e ) {
     e.preventDefault();
@@ -35,5 +43,34 @@ Template.registerHelper( 'unreadMessages', function () {
     }
   });
 
-  return messages.fetch().length;
+  var number = messages.fetch().length;
+
+  Meteor.autorun( function () {
+    if ( Template.body.favico ) {
+      if ( number > 0 ) {
+        Template.body.favico.badge( number );
+      } else {
+        Template.body.favico.reset();
+      }
+
+      // Determine whether to notify or not
+      if ( Template.body.notifications == null ) {
+        // Don't notify
+      } else if ( Template.body.notifications <= number ) {
+        // Notify
+
+        Notification.requestPermission( function () {
+          new Notification( 'Message received', {
+            body: 'You have a total of ' + number + ' unread messages.',
+            tag : 'preset', // TODO
+            icon: 'http://placehold.it/20x20' //TODO
+          } );
+        } );
+      }
+
+      Template.body.notifications = number;
+    }
+  }.bind( this ) );
+
+  return number;
 } );

@@ -177,7 +177,7 @@ Meteor.methods( {
       } );
 
       if ( message ) {
-        messagesParents.push( message );
+        messagesParents.unshift( message );
       }
     }
 
