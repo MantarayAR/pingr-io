@@ -10,27 +10,27 @@
   {{#ionView}}
     {{#ionContent}}
       <div class="button-bar">
-        <a class="button button-outline button-assertive" data-action="logout">Logout</a>
+        
       </div>
 
       <div class="list card">
         <div class="item item-divider">
           <h2>Account Settings</h2>
         </div>
-        <div class="item item-text-wrap">
-          <ul class="list">
-            <li class="item item-checkbox">
-               <label class="checkbox">
-                  {{#if settings.disableNotifications}}
-                    <input type="checkbox" checked name="disableNotifications">
-                  {{else}}
-                    <input type="checkbox" name="disableNotifications">
-                  {{/if}}
-               </label>
-               Disable Notifications
-            </li>
-          </ul>
+        <div class="item item-checkbox">
+           <label class="checkbox">
+              {{#if settings.disableNotifications}}
+                <input type="checkbox" checked name="disableNotifications">
+              {{else}}
+                <input type="checkbox" name="disableNotifications">
+              {{/if}}
+           </label>
+           Disable Notifications
         </div>
+        <div class="item item-divider">
+          <h2>Account Actions</h2>
+        </div>
+        <a class="item item-icon-left assertive" data-action="logout" href="#">{{> ionIcon icon="log-out" class="assertive"}} Logout</a>
       </div>
 
       

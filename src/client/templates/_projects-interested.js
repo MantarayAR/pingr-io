@@ -1,11 +1,15 @@
+Template._projectsInterested.onCreated( function () {
+  Meteor.subscribe( 'userSkills', Meteor.userId() );
+} );
+
 Template._projectsInterested.helpers( {
   skillsJoined : function () {
-    var project = Projects.findOne( {
-      _id : Router.current().params._id
+    var user = UserSkills.findOne( {
+      owner : Meteor.userId()
     } );
 
-    if ( project )
-      return project.lookingFor.join( ', ' );
+    if ( user )
+      return user.skills.join( ', ' );
     else
       return '';
   },

@@ -18,12 +18,22 @@
             <p>{{project.description}}</p>
 
             <br/>
+
             <h3>Looking For</h3>
             <div class="pills">
               {{#each project.lookingFor}}
                 {{> _pill this}}
               {{/each}}
             </div>
+
+            <br/>
+
+            <h3>Related Links</h3>
+            <ul>
+              {{#each project.relatedLinks}}
+                <li><a href="{{this}}">{{this}}</a></li>
+              {{/each}}
+            </ul>
           </div>
           <div class="item tabs tabs-secondary tabs-icon-left">
             {{#if isOwner}}

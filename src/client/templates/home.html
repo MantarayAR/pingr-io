@@ -24,6 +24,41 @@
 </template>
 
 <template name="homeDecisions">
-  <button data-ion-modal="_projectsNew" class="button button-block button-energized">I have a project</button>
-  <button data-ion-modal="_userSkillsEdit" class="button button-block button-assertive">I'm looking to contribute</button>
+  <div class="contribute">
+    <h2>Looking to Contribute?</h2>
+    <div class="flexbox">
+      <button data-ion-modal="_userSkillsEdit" class="button button-block button-assertive">Find Projects</button>
+      <div class="flexblock">
+        <div class="table">
+          <p class="cell">
+            You can find projects relevent to your talents set by entering in your skills. We'll match you to projects that are looking for your skillset!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recruit">
+    <h2>Have an Project?</h2>
+    <div class="flexbox">
+      <button data-ion-modal="_projectsNew" class="button button-block button-energized">Post Your Project</button>
+      <div class="flexblock">
+        <div class="table">
+          <p class="cell">
+            Have a project, but you're missing an important skill on your team? Post your project and get messages from talented individuals who are looking to contribute!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox">
+      <button data-ion-modal="_findSkills" class="button button-block button-energized ">
+      {{> ionIcon icon="ribbon-b"}} Find Talented People</button>
+      <div class="flexblock">
+        <div class="table">
+          <p class="cell">
+            You can find projects relevent to your talents set by entering in your skills. We'll match you to projects that are looking for your skillset!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

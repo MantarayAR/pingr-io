@@ -50,6 +50,17 @@ Projects.attachSchema( new SimpleSchema( {
         ]
       }
     }
+  },
+  relatedLinks : {
+    type : [String],
+    optional : true,
+    label : 'Related Links (Optional)',
+    maxCount: 3
+  },
+  'relatedLinks.$' : {
+    autoform : {
+      placeholder: 'https://projectlink.com'
+    }
   }
 } ) );
 

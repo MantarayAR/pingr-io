@@ -1,6 +1,6 @@
 Template.projectsShow.onCreated( function () {
   this.autorun( function () {
-    this.subscriptions = Meteor.subscribe( 'project', Router.current().params._id );
+    Meteor.subscribe( 'project', Router.current().params._id );
   }.bind( this ) );
 } );
 
